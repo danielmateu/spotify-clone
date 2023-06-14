@@ -5,6 +5,7 @@ import { RxCaretLeft } from "react-icons/rx";
 import { RxCaretRight } from "react-icons/rx";
 import { HiHome } from "react-icons/hi";
 import { HiSearch } from "react-icons/hi";
+import { Button } from "./Button";
 
 interface HeaderProps {
     children?: React.ReactNode;
@@ -72,8 +73,30 @@ export const Header: React.FC<HeaderProps> = ({ children, className }) => {
 
                     </button>
                 </div>
+                <div
+                    className="flex gap-2 items-center justify-center"
+                >
+                    <>
+                        <div>
+                            <Button
+                                onClick={() => { }}
+                                className="bg-transparent text-neutral-300 font-medium"
+                            >
+                                Sign up
+                            </Button>
+                        </div>
+                        <div>
+                            <Button
+                                onClick={() => { }}
+                                className="bg-white px-4 py-2 text-black font-medium"
+                            >
+                                Log in
+                            </Button>
+                        </div>
+                    </>
+                </div>
             </div>
-
+            {children}
         </div>
     )
 }
