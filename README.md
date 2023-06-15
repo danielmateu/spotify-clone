@@ -13,6 +13,6 @@ Tecnologías que estamos usando:
 - TailwindCSS
 - tailwind-merge
 - React-Icons
-- Supabase para las autenticacioness
+- Supabase para la gestion de la DB
 - Autenticacion con Github
 - ...
