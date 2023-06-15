@@ -52,7 +52,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ children }) => {
                     <Library />
                 </Box>
             </div>
-            <main className="flex flex-col flex-1 h-full overflow-auto py-2">
+            <main className="flex flex-col flex-1 h-full overflow-auto py-2 md:pe-2">
                 {children}
             </main>
         </div>

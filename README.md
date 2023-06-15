@@ -4,6 +4,8 @@ Primer contacto con NextJs 13, ya tocaba actualizarse. Siguiendo las indicacione
 
 https://www.youtube.com/watch?v=2aeMRB8LL4o&t=586s
 
+Su perfil de Github: https://github.com/AntonioErdeljac/next13-spotify
+
 Tecnologías que estamos usando:
 
 - NextJS
