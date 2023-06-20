@@ -65,6 +65,8 @@ export const Modal: React.FC<ModalProps> = ({
                             top-0
                             right-0
                             p-2
+                            mt-[-10px]
+                            mr-[-10px]
                             rounded-full
                             bg-neutral-700
                             hover:bg-neutral-600
