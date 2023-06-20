@@ -15,4 +15,6 @@ Tecnologías que estamos usando:
 - React-Icons
 - Supabase para la gestion de la DB
 - Autenticacion con Github
+- Radix para uso de componentes
+- Zustand
 - ...
