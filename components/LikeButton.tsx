@@ -83,7 +83,6 @@ export const LikeButton: React.FC<LikeButtonProps> = ({
             } else {
                 setIsLiked(true)
                 toast.success('Song liked')
-
             }
         }
         router.refresh()

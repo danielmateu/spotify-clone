@@ -2,12 +2,15 @@ import getSongsByTitle from "@/actions/getSongsByTitle";
 import { Header } from "@/components/Header";
 import { SearchContent } from "@/app/search/components/SearchContent";
 import { SearchInput } from "@/components/SearchInput";
+// import { revalidate } from '../liked/page';
 
 interface SearchProps {
     searchParams: {
         title: string;
     }
 }
+
+export const revalidate = 0
 
 const Search = async ({ searchParams }: SearchProps) => {
     const songs = await getSongsByTitle(searchParams.title)
