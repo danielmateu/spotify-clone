@@ -5,6 +5,7 @@ import { SupabaseProvider } from '@/providers/SupabaseProvider';
 import { UserProvider } from '@/providers/UserProvider';
 import { ModalProvider } from '@/providers/ModalProvider';
 import { ToasterProvider } from '@/providers/ToasterProvider';
+import getSongsByUserId from '@/actions/getSongsByUserId';
 
 // import getSongsByUserId from '@/actions/getSongsByUserId';
 // import { revalidate } from './(site)/page';
@@ -24,7 +25,7 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode
 }) {
-  // const userSongs = await getSongsByUserId()
+  const userSongs = await getSongsByUserId()
 
   return (
     <html lang="en">
@@ -34,7 +35,7 @@ export default async function RootLayout({
           <UserProvider>
             <ModalProvider />
             <Sidebar
-            // songs={userSongs}
+            songs={userSongs}
             >
               {children}
             </Sidebar>
