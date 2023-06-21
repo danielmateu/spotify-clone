@@ -18,8 +18,6 @@ export const PlayButton = () => {
         group-hover:translate-y-0
         group-hover:translate-x-0
         hover:scale-110
-        
-        
         ">
             <FaPlay className='text-black' />
         </button>

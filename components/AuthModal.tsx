@@ -29,8 +29,8 @@ export const AuthModal = () => {
 
     return (
         <Modal
-            title="Auth Modal Title"
-            description="Auth Modal Description"
+            title="Authorization Required"
+            description="You need to be logged in to access this page."
             isOpen={isOpen}
             onChange={onChange}
         >

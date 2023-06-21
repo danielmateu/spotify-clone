@@ -49,7 +49,6 @@ export const SongItem: React.FC<SongItemProps> = ({ onClick, data }) => {
                     src={imagePath || "/images/liked.png"}
                     fill
                     alt={data.title}
-
                 />
 
                 <PlayButton />
