@@ -19,12 +19,11 @@ export const SearchInput = () => {
 
         const url = qs.stringifyUrl({
             url: "/search",
-            query,
+            query: query,
         })
+
+        router.push(url)
     }, [debouncedValue, router])
-
-
-
 
     return (
         <Input

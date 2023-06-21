@@ -34,6 +34,7 @@ export const ListItem: React.FC<ListItemProps> = ({
                 <Image
                     className="object-cover"
                     fill
+                    sizes="64px"
                     src={image || "/images/liked.png"}
                     alt={name}
                 />
