@@ -1,9 +1,7 @@
 import { useEffect, useMemo, useState } from "react"
 import { Song } from '../types';
 import { useSessionContext } from '@supabase/auth-helpers-react';
-import { set } from "react-hook-form";
 import { toast } from "react-hot-toast";
-
 
 export const useGetSongById = (id?: string) => {
 
@@ -19,7 +17,7 @@ export const useGetSongById = (id?: string) => {
         setIsLoading(true)
 
         const fetchSong = async () => {
-            const { data: song, error } = await supabaseClient
+            const { data, error } = await supabaseClient
                 .from('songs')
                 .select('*')
                 .eq('id', id)
@@ -30,7 +28,7 @@ export const useGetSongById = (id?: string) => {
                 toast.error(error.message)
                 // console.log(error)
             } else {
-                setSong(song)
+                setSong(data)
             }
         }
 
@@ -38,7 +36,7 @@ export const useGetSongById = (id?: string) => {
     }, [id, supabaseClient])
 
 
-    useMemo(() => ({
+    return useMemo(() => ({
         isLoading,
         song
     }), [isLoading, song])

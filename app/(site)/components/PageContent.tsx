@@ -1,6 +1,7 @@
 "use client"
 
 import { SongItem } from "@/components/SongItem";
+import { useOnPlay } from "@/hooks/useOnPlay";
 import { Song } from "@/types";
 
 interface PageContentProps {
@@ -8,6 +9,8 @@ interface PageContentProps {
 }
 
 export const PageContent: React.FC<PageContentProps> = ({ songs }) => {
+
+    const { onPlay } = useOnPlay(songs)
 
     if (songs.length === 0) return (
         <div className="flex justify-center items-center h-96">
@@ -29,29 +32,11 @@ export const PageContent: React.FC<PageContentProps> = ({ songs }) => {
         ">
             {songs.map((song) => (<SongItem
                 key={song.id}
-                onClick={() => { }}
+                onClick={(id: string) => onPlay(id)}
                 data={song}
             />)
             )}
         </div>
-        // <div>
-        //     {songs.map((song, index) => (
-        //         <div key={index} className="flex items-center justify-between py-2">
-        //             <div className="flex items-center">
-        //                 <div className="flex items-center justify-center w-10 h-10 rounded-full bg-neutral-800">
-        //                     <div className="text-white text-2xl font-semibold">{song.title[0]}</div>
-        //                 </div>
-        //                 <div className="ml-4">
-        //                     <div className="text-white font-semibold">{song.title}</div>
-        //                     <div className="text-neutral-400">{song.author}</div>
-        //                 </div>
-        //             </div>
-        //             <div className="text-neutral-400">
-
-        //             </div>
-        //         </div>
-        //     ))}
-        // </div>
 
     )
 }
