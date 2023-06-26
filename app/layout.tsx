@@ -28,6 +28,8 @@ export default async function RootLayout({
 }) {
   const userSongs = await getSongsByUserId()
 
+  // throw new Error('test')
+
   return (
     <html lang="en">
       <body className={font.className}>
@@ -35,9 +37,7 @@ export default async function RootLayout({
         <SupabaseProvider>
           <UserProvider>
             <ModalProvider />
-            <Sidebar
-              songs={userSongs}
-            >
+            <Sidebar songs={userSongs}>
               {children}
             </Sidebar>
             <Player />
