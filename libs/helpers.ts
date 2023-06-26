@@ -33,3 +33,10 @@ export const postData = async (url: string, data?: { price: Price }) => {
 
     return res.json();
 }
+
+export const toDateTime = (secs: number) => {
+    let t = new Date('1970-01-01T00:30:00Z'); // Epoch
+    t.setSeconds(secs);
+
+    return t;
+}
