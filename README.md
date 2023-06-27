@@ -18,3 +18,9 @@ Tecnologías que estamos usando:
 - Radix para uso de componentes
 - Zustand
 - ...
+
+Importante hacer correr Stripe para sincronizar con la DB de Supabase
+
+- .\stripe login
+- .\stripe listen --forward-to localhost:3000/api/webhooks
+- .\stripe trigger payment_intent.succeeded
