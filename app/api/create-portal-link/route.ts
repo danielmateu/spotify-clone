@@ -8,15 +8,11 @@ import { NextRequest, NextResponse } from "next/server";
 
 export async function POST() {
     try {
-        const supabase = createRouteHandlerClient({
-            cookies
-        })
+        const supabase = createRouteHandlerClient({ cookies })
 
         const { data: { user } } = await supabase.auth.getUser()
 
-        if (!user) {
-            return new Error('Unauthorized')
-        }
+        if (!user) { return new Error('Unauthorized') }
 
         const customer = await createOrRetrieveCustomer({
             uuid: user?.id || "",
