@@ -1,6 +1,7 @@
 "use client"
 
 import { useLoadImage } from '@/hooks/useLoadImage';
+import usePlayer from '@/hooks/usePlayer';
 import { Song } from '@/types'
 import Image from 'next/image';
 
@@ -9,11 +10,8 @@ interface MediaItemProps {
     onClick?: (id: string) => void;
 }
 
-export const MediaItem: React.FC<MediaItemProps> = ({
-    data,
-    onClick
-}) => {
-
+export const MediaItem: React.FC<MediaItemProps> = ({ data, onClick }) => {
+    const player = usePlayer()
     const imageUrl = useLoadImage(data)
 
     const handleClick = () => {
@@ -22,6 +20,7 @@ export const MediaItem: React.FC<MediaItemProps> = ({
         }
 
         // TODO: Default turn on player
+        return player.setId(data.id)
     }
 
     return (
