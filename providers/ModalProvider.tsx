@@ -10,7 +10,6 @@ interface ModalProviderProps {
     products: ProductWithPrice[]
 }
 
-
 export const ModalProvider: React.FC<ModalProviderProps> = ({ products }) => {
 
     const [isMounted, setIsMounted] = useState(false)
@@ -24,8 +23,7 @@ export const ModalProvider: React.FC<ModalProviderProps> = ({ products }) => {
     return (
         <>
             <AuthModal />
-            <SubscribeModal
-                products={products} />
+            <SubscribeModal products={products} />
             <UploadModal />
         </>
     )
